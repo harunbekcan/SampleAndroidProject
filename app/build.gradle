@@ -79,4 +79,7 @@ dependencies {
     //Paging3
     def paging_version = "3.2.0-alpha01"
     implementation "androidx.paging:paging-runtime:$paging_version"
+
+    //Last Adapter
+    implementation "com.github.nitrico.lastadapter:lastadapter:2.3.0"
 }

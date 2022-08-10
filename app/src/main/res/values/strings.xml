@@ -2,4 +2,9 @@
     <string name="app_name">SampleAndroidProject</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_bottom_sheet">open bottom sheet</string>
+    <string name="open_pop_up_window">open pop-up window</string>
+    <string name="open_web_view">open web-view</string>
+    <string name="bottom_sheet_title">BottomSheetTitle</string>
+    <string name="android">Android</string>
 </resources>

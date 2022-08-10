@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners
 import com.bumptech.glide.request.RequestOptions
@@ -28,6 +29,18 @@ fun ImageView.loadImage(imageUrl: String) {
         .load(imageUrl)
         .error(R.drawable.ic_launcher_background)
         .into(this)
+}
+
+fun ImageView.loadImageDrawable(drawableRes: Int) {
+    Glide.with(this.context)
+        .load(drawableRes)
+        .apply(
+            RequestOptions()
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+        )
+        .error(R.drawable.ic_launcher_background)
+        .into(this)
+
 }
 
 fun ImageView.loadRoundedImage(imageUrl: String?) {

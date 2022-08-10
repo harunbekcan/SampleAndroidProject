@@ -1,5 +1,6 @@
 package com.harunbekcan.sampleandroidproject.base
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,12 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.harunbekcan.sampleandroidproject.utils.BottomSheetDialog
 
 abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
 
     lateinit var binding: VDB
+    lateinit var bottomSheetDialog: BottomSheetDialog
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,4 +34,18 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
     }
 
     abstract fun prepareView(savedInstanceState: Bundle?)
+
+    @Suppress("SameParameterValue")
+    fun showBottomSheet(
+        context: Context,
+        title: Int,
+        listener: BottomSheetDialog.BottomSheetListener,
+    ) {
+        bottomSheetDialog = BottomSheetDialog.instance.apply {
+            setupSheet(context.getString(title))
+            this.listener = listener
+        }.also {
+            it.show(childFragmentManager, getString(title))
+        }
+    }
 }
