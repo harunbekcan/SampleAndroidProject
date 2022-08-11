@@ -82,4 +82,9 @@ dependencies {
 
     //Last Adapter
     implementation "com.github.nitrico.lastadapter:lastadapter:2.3.0"
+
+    // Material Dialog
+    def materialDialogVersion = "3.3.0"
+    implementation "com.afollestad.material-dialogs:core:$materialDialogVersion"
+    implementation "com.afollestad.material-dialogs:input:$materialDialogVersion"
 }
