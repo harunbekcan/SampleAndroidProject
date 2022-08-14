@@ -2,8 +2,6 @@ package com.harunbekcan.sampleandroidproject.ui.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.blankj.utilcode.util.LogUtils
 import com.harunbekcan.sampleandroidproject.R
@@ -55,8 +53,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), BottomSheetDialog.Bott
     }
 
     override fun approveItemClick(item: Any, layoutPosition: Int) {
-        val selectedList = viewModel.getSelectedItems().map { it.id }.toMutableList()
-        viewModel.setSelectedList(selectedList as ArrayList<Int>)
-        LogUtils.d("fff1",selectedList.toString())
+       viewModel.getSelectedItemIds()
+        LogUtils.d("fff1",viewModel.getSelectedItemIds().toString())
+        bottomSheetDialog.dismiss()
     }
 }

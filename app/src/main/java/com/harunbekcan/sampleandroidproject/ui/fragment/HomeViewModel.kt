@@ -8,40 +8,20 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(val resourceProvider: ResourceProvider) : ViewModel() {
+
     var bottomSheetLanguageList = ArrayList<BottomSheetModel>()
-    var selectedFilterList = mutableListOf<Int>()
 
     fun initBottomSheetLanguageList() {
-        bottomSheetLanguageList.clear()
-        bottomSheetLanguageList.add(
-            BottomSheetModel(
-                1,
-                resourceProvider.getLanguageDrawable(), resourceProvider.getTurkishLanguageString()
-            )
-        )
-        bottomSheetLanguageList.add(
-            BottomSheetModel(
-                2,
-                resourceProvider.getLanguageDrawable(), resourceProvider.getEnglishLanguageString()
-            )
-        )
-        bottomSheetLanguageList.add(
-            BottomSheetModel(
-                3,
-                resourceProvider.getLanguageDrawable(), resourceProvider.getFrenchLanguageString()
-            )
-        )
+        bottomSheetLanguageList.add(BottomSheetModel(1, resourceProvider.getLanguageDrawable(), resourceProvider.getTurkishLanguageString()))
+        bottomSheetLanguageList.add(BottomSheetModel(2, resourceProvider.getLanguageDrawable(), resourceProvider.getEnglishLanguageString()))
+        bottomSheetLanguageList.add(BottomSheetModel(3, resourceProvider.getLanguageDrawable(), resourceProvider.getFrenchLanguageString()))
     }
 
     fun bottomSheetSelectItem(bottomSheetModel: BottomSheetModel) {
-        bottomSheetModel.isSelected = true
+        bottomSheetModel.isSelected = bottomSheetModel.isSelected.not()
     }
 
-    fun getSelectedItems() = bottomSheetLanguageList.filter { it.isSelected }
-
-    fun setSelectedList(filterList: ArrayList<Int>) {
-        selectedFilterList.clear()
-        selectedFilterList.addAll(filterList)
-    }
+    private fun getSelectedItems() = bottomSheetLanguageList.filter { it.isSelected }
+    fun getSelectedItemIds() = getSelectedItems().map { it.id }
 
 }
