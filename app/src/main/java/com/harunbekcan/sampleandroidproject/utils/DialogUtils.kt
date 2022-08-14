@@ -2,6 +2,7 @@ package com.harunbekcan.sampleandroidproject.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
@@ -22,8 +23,8 @@ fun Context.showDialog(
     }
 }
 
-fun MaterialDialog.setImage(image: Int?) {
-    this.findViewById<ImageView>(R.id.ivPopup).loadImageDrawable(image ?: 0)
+fun MaterialDialog.setImage(image: Drawable?) {
+    this.findViewById<ImageView>(R.id.ivPopup).loadImageDrawable(image)
     this.findViewById<ImageView>(R.id.ivPopup).isVisible = true
 }
 

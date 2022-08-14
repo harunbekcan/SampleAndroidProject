@@ -1,6 +1,7 @@
 package com.harunbekcan.sampleandroidproject.utils
 
 import android.annotation.SuppressLint
+import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
@@ -31,7 +32,7 @@ fun ImageView.loadImage(imageUrl: String) {
         .into(this)
 }
 
-fun ImageView.loadImageDrawable(drawableRes: Int) {
+fun ImageView.loadImageDrawable(drawableRes: Drawable?) {
     Glide.with(this.context)
         .load(drawableRes)
         .apply(

@@ -1,5 +1,6 @@
 package com.harunbekcan.sampleandroidproject.utils
 
+import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 
@@ -15,7 +16,7 @@ object BindingUtils {
 
     @JvmStatic
     @BindingAdapter("loadImageDrawable")
-    fun loadImageDrawable(view: ImageView, imageUrl: Int?) {
+    fun loadImageDrawable(view: ImageView, imageUrl: Drawable?) {
         imageUrl?.let {
             view.loadImageDrawable(it)
         }

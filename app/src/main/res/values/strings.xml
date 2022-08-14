@@ -5,9 +5,13 @@
     <string name="open_pop_up_window">open pop-up window</string>
     <string name="open_web_view">open web-view</string>
     <string name="bottom_sheet_title">BottomSheetTitle</string>
-    <string name="android">Android</string>
     <string name="positive_button">Positive Button</string>
     <string name="negative_button">Negative Button</string>
     <string name="neutral_button">Neutral Button</string>
     <string name="pop_up_title">Pop-Up Title</string>
+
+    <string name="languages">Languages</string>
+    <string name="turkish">Turkish</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
 </resources>

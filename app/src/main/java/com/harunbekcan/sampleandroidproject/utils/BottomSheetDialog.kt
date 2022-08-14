@@ -23,7 +23,7 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
     private lateinit var titleTextView: TextView
     var listener: BottomSheetListener? = null
     private lateinit var recyclerView: RecyclerView
-    var bottomSheetAdapterList = arrayListOf<Any>()
+    var bottomSheetAdapterList = ArrayList<Any>()
 
     @Nullable
     override fun onCreateView(

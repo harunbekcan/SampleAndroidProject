@@ -1,5 +1,7 @@
 package com.harunbekcan.sampleandroidproject.di
 
+import android.app.Application
+import android.content.Context
 import com.harunbekcan.sampleandroidproject.data.ServiceInterface
 import com.harunbekcan.sampleandroidproject.utils.Constant.BASE_URL
 import com.harunbekcan.sampleandroidproject.utils.CustomHttpLogger
@@ -59,5 +61,11 @@ object AppModule {
     @Provides
     fun provideService(retrofit: Retrofit): ServiceInterface {
         return retrofit.create(ServiceInterface::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideContext(application: Application): Context {
+        return application.applicationContext
     }
 }
