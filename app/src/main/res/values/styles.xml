@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Radio Button Color Style -->
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">@color/magenta</item>
+    </style>
+
+</resources>

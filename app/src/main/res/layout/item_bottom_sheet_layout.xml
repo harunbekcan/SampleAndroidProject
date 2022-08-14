@@ -48,6 +48,15 @@
                     app:layout_constraintTop_toTopOf="@+id/ivFlag"
                     tools:text="Android" />
 
+                <RadioButton
+                    android:id="@+id/languageBottomSheetRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivFlag"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivFlag" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View

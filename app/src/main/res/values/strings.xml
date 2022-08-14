@@ -14,4 +14,6 @@
     <string name="turkish">Turkish</string>
     <string name="english">English</string>
     <string name="french">French</string>
+    <string name="ok">OK</string>
+    <string name="approve">Approve</string>
 </resources>

@@ -1,8 +1,11 @@
 package com.harunbekcan.sampleandroidproject.ui.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import com.blankj.utilcode.util.LogUtils
 import com.harunbekcan.sampleandroidproject.R
 import com.harunbekcan.sampleandroidproject.base.BaseFragment
 import com.harunbekcan.sampleandroidproject.data.BottomSheetModel
@@ -11,7 +14,7 @@ import com.harunbekcan.sampleandroidproject.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(), BottomSheetDialog.BottomSheetListener {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(), BottomSheetDialog.BottomSheetListener,BottomSheetDialog.BottomSheetApproveButtonListener {
 
     override fun getLayoutId(): Int = R.layout.fragment_home
 
@@ -37,12 +40,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), BottomSheetDialog.Bott
 
     private fun openBottomSheetButtonListener() {
         binding.openBottomSheetButton.setOnClickListener {
-            showBottomSheet(requireContext(), R.string.languages, this)
+            showBottomSheet(requireContext(), R.string.languages, this,this)
             bottomSheetDialog.bottomSheetAdapterList.addAll(viewModel.bottomSheetLanguageList)
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun bottomSheetItemClick(item: Any, layoutPosition: Int) {
-        bottomSheetDialog.dismiss()
+        if (item is BottomSheetModel) {
+            viewModel.bottomSheetSelectItem(item)
+            bottomSheetDialog.adapter?.notifyDataSetChanged()
+            LogUtils.d("fff",viewModel.bottomSheetLanguageList.toString())
+        }
+    }
+
+    override fun approveItemClick(item: Any, layoutPosition: Int) {
+        val selectedList = viewModel.getSelectedItems().map { it.id }.toMutableList()
+        viewModel.setSelectedList(selectedList as ArrayList<Int>)
+        LogUtils.d("fff1",selectedList.toString())
     }
 }

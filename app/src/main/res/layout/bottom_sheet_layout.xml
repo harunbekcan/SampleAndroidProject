@@ -32,5 +32,13 @@
         tools:itemCount="3"
         tools:listitem="@layout/item_bottom_sheet_layout"/>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/approveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:layout_margin="8dp"
+            android:text="@string/approve"/>
+
     </LinearLayout>
 </layout>
