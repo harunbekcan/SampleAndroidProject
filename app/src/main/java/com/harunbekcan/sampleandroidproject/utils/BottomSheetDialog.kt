@@ -5,13 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.annotation.NonNull
 import androidx.annotation.Nullable
-import androidx.recyclerview.widget.RecyclerView
 import com.github.nitrico.lastadapter.LastAdapter
 import com.github.nitrico.lastadapter.Type
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.button.MaterialButton
 import com.harunbekcan.sampleandroidproject.BR
 import com.harunbekcan.sampleandroidproject.R
 import com.harunbekcan.sampleandroidproject.data.BottomSheetModel
