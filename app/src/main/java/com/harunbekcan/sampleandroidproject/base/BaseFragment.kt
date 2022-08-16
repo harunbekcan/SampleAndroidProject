@@ -39,12 +39,12 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
     fun showBottomSheet(
         context: Context,
         title: Int,
-        listener: BottomSheetDialog.BottomSheetListener,
+        itemClickListener: BottomSheetDialog.BottomSheetItemClickListener,
         approveButtonListener : BottomSheetDialog.BottomSheetApproveButtonListener
     ) {
         bottomSheetDialog = BottomSheetDialog.instance.apply {
             setupSheet(context.getString(title))
-            this.listener = listener
+            this.itemClickListener = itemClickListener
             this.approveButtonListener = approveButtonListener
         }.also {
             it.show(childFragmentManager, getString(title))

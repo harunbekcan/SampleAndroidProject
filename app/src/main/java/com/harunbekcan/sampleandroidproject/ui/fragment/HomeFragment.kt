@@ -12,7 +12,7 @@ import com.harunbekcan.sampleandroidproject.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(), BottomSheetDialog.BottomSheetListener,BottomSheetDialog.BottomSheetApproveButtonListener {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(), BottomSheetDialog.BottomSheetItemClickListener,BottomSheetDialog.BottomSheetApproveButtonListener {
 
     override fun getLayoutId(): Int = R.layout.fragment_home
 
