@@ -1,5 +1,6 @@
 package com.harunbekcan.sampleandroidproject.utils
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,7 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
     ): View {
         val rootView = BottomSheetLayoutBinding.inflate(inflater,container,false)
         initAdapter(rootView)
+        initUi(rootView)
         titleTextView = rootView.bottomSheetTitleTextView
         titleTextView.text = titleText
         return rootView.root
@@ -40,6 +42,12 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
     companion object {
         val instance: BottomSheetDialog
             get() = BottomSheetDialog()
+    }
+
+    private fun initUi(rootView: BottomSheetLayoutBinding){
+        rootView.approveButton.setOnClickListener {
+            approveButtonListener?.approveItemClick(it)
+        }
     }
 
     private fun initAdapter(rootView:BottomSheetLayoutBinding) {
@@ -54,12 +62,6 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
 
                             holder.binding.container.setOnClickListener {
                                 itemClickListener?.bottomSheetItemClick(
-                                    holder.binding.item as BottomSheetModel,
-                                    holder.layoutPosition
-                                )
-                            }
-                            rootView.approveButton.setOnClickListener {
-                                approveButtonListener?.approveItemClick(
                                     holder.binding.item as BottomSheetModel,
                                     holder.layoutPosition
                                 )
@@ -80,6 +82,7 @@ class BottomSheetDialog : BottomSheetDialogFragment() {
     }
 
     interface BottomSheetApproveButtonListener {
-        fun approveItemClick(item: Any, layoutPosition: Int)
+        fun approveItemClick(view:View)
     }
+
 }
