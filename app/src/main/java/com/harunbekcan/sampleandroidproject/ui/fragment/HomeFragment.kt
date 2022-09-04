@@ -2,7 +2,6 @@ package com.harunbekcan.sampleandroidproject.ui.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.blankj.utilcode.util.LogUtils
