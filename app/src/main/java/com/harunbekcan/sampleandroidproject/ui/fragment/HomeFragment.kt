@@ -64,7 +64,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
         viewModel.bottomSheetLanguageList.forEach {
             it.isSelected = (bottomSheetDialog.bottomSheetAdapterList.find { language -> (language as BottomSheetModel).id == it.id } as BottomSheetModel).isSelected
         }
-        LogUtils.d("fff1", viewModel.getSelectedItemIds().toString())
 //        viewModel.bottomSheetLanguageList.forEachIndexed {index, bottomSheetModel ->
 //            bottomSheetModel.isSelected = (bottomSheetDialog.bottomSheetAdapterList[index] as BottomSheetModel).isSelected
 //        }
