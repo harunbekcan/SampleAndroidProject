@@ -55,7 +55,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),
         if (item is BottomSheetModel) {
             viewModel.bottomSheetSelectItem(item)
             bottomSheetDialog.adapter?.notifyDataSetChanged()
-            LogUtils.d("fff", viewModel.bottomSheetLanguageList.toString())
         }
     }
 
